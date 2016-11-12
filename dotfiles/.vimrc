@@ -1,4 +1,5 @@
 " configuration file
+" &
 " ---------------------------------
 " to edit - :e $MYVIMRC
 
@@ -25,11 +26,11 @@ noremap <Right>     <Nop>
 "=====[ Backups ]==============================================
 set backup			" always keep a backup file before editing
 set writebackup
-set backupdir=/tmp/_edits
+set backupdir=~/tmp/_edits
 set backupskip=C:\WINDOWS\Temp\*
-set directory=/tmp/_edits
+set directory=~/tmp/_edits
 
-set udir=/tmp/_edits
+set udir=~/tmp/_edits
 
 
 "=====[ general settings ]======================================
@@ -182,6 +183,8 @@ else
 endif
 
 colorscheme blue
+
+
 
 
 " set font
