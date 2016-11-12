@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+while(<>){
+
+    chomp();
+    my $module = $_;
+
+    print "processing: $module\n";
+    system("cpanm $module");
+}
+
