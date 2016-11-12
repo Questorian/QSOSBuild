@@ -1,4 +1,4 @@
-onfiguration file
+" configuration file
 " ---------------------------------
 " to edit - :e $MYVIMRC
 
@@ -7,7 +7,7 @@ onfiguration file
 set nocompatible
 
 " start pathogen - filetype on must come after this call
-call pathogen#infect()
+" call pathogen#infect()
 
 filetype plugin on
 syntax on
@@ -25,11 +25,11 @@ noremap <Right>     <Nop>
 "=====[ Backups ]==============================================
 set backup			" always keep a backup file before editing
 set writebackup
-set backupdir=C:\tmp\_trash\edits
+set backupdir=/tmp/_edits
 set backupskip=C:\WINDOWS\Temp\*
-set directory=C:\tmp\_trash\edits
+set directory=/tmp/_edits
 
-set udir=c:\tmp\_trash\edits
+set udir=/tmp/_edits
 
 
 "=====[ general settings ]======================================
@@ -168,8 +168,7 @@ imap	<S-F3>	<C-R>=strftime("%Y-%m-%d")<CR>
 
 " Display Stuff - Font & Console
 " ------------------------------
-set lines=45 columns=99
-
+" set lines=45 columns=99 
 " get rid of toolbar and menubar if gui
 set guioptions-=m
 set guioptions-=T
@@ -182,14 +181,14 @@ else
     set background=dark
 endif
 
-colorscheme solarized
+colorscheme blue
 
 
 " set font
 if has ('Win32') || has('Win64')
 	set guifont=Consolas:h11:cANSI
 elseif has ("unix")
-	let &guifont="Monospace 10"
+	let &guifont="Monospace 11"
 endif
 
 
