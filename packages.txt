@@ -1,0 +1,14 @@
+# QSOS package list - 2016-11-13
+
+curl
+
+ntp
+libssl-dev
+
+
+libxml2
+libxml2-dev
+libexpat1-dev
+zlib1g-dev
+
+linux-headers-$(uname -r)

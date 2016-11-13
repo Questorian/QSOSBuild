@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+
+    system("apt-get update");
+    system("apt-get -y update");
+
+
+while(<>){
+
+    chomp;
+
+    next if /#/;            # skip comments and blank lines
+    next if /^\s*$/;
+
+    print "package: $_\n";
+    system("apt-get -y install $_");
+
+}
+
