@@ -1,14 +1,28 @@
 # QSOS package list - 2016-11-13
 
-curl
+# bootstrap git - enable content pull-down
+openssh-server
+git
 
+# core pacakges - for all systems
 ntp
+curl
+sudo
+vim
 libssl-dev
+htop
+tree
+bzip2
 
-
+# app - application servers
+build-essential
 libxml2
 libxml2-dev
 libexpat1-dev
 zlib1g-dev
-
 linux-headers-$(uname -r)
+
+# devel
+vim-doc
+man
+
