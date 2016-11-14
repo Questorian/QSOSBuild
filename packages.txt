@@ -13,6 +13,7 @@ libssl-dev
 htop
 tree
 bzip2
+ack-grep
 
 # app - application servers
 build-essential
