@@ -42,7 +42,8 @@ set showcmd         " display commands as they are entered
 set visualbell
 set undofile
 set cursorline
-set autowrite       " automatically save files when hiding buffers
+set autowrite       " automatically save files when hiding buffers/files
+set autoread        " always reload buffer when external changes detected
 
 
 "=====[ search & replace  ]======================================
@@ -85,8 +86,8 @@ nnoremap <leader>ll      yypVr=         " underline - double
 "
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap df <esc>
-inoremap fd <esc>
+#inoremap df <esc>
+#inoremap fd <esc>
 
 
 " line numbers on - but only on current edit buffer
