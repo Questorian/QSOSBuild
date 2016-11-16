@@ -24,7 +24,3 @@ PROMPT_COMMAND='history -n;history -a'
 HISTSIZE=100000
 HISTFILESIZE=1000000
 HISTTIMEFORMAT="%F %T "
-
-source ~/perl5/perlbrew/etc/bashrc
-
-
