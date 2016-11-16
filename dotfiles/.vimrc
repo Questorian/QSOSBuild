@@ -26,20 +26,19 @@ noremap <Right>     <Nop>
 "=====[ Backups ]==============================================
 set backup			" always keep a backup file before editing
 set writebackup
-set backupdir=~/tmp/_edits
-set backupskip=C:\WINDOWS\Temp\*
-set directory=~/tmp/_edits
-
-set udir=~/tmp/_edits
+set backupdir=~/.vim/bkup
+set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
+set backupskip=/tmp/*
 
 
 "=====[ general settings ]======================================
 "
 set ruler			" display where we are in doc on bottom status line
+set relativenumber  " make relative line numbering the default
 set history=2000	" set history stack size - (can persist after restart)
 set undolevels=1000 " a big undo stack is required - yes exageration
 set showcmd         " display commands as they are entered
-set relativenumber  " make relative line numbering the default
 set visualbell
 set undofile
 set cursorline
@@ -57,7 +56,6 @@ set gdefault        " make /substitions 'global' by default - add 'g' back if no
 "=====[ Text handling ]======================================
 "
 set textwidth=78    " wrap at column 78 (PBP)
-
 set colorcolumn=+1  " visible textwidth border on left edge of display
 set nofoldenable    " do not fold code by default
 
@@ -75,6 +73,7 @@ set smarttab       "Use shiftwidths at left margin, tabstops everywhere else
 "=====[ Leader key and Customisations ]======================================
 "
 let mapleader=","   " change <Leader> to comma (rather than default '\')
+
 nnoremap <leader>ev     :edit $MYVIMRC<CR>      " edit vimrc
 nnoremap <leader>sv     :source $MYVIMRC<CR>    " Source vimrc
 nnoremap <leader>a      :Ack    " Ack shortcut for searching 
@@ -90,14 +89,10 @@ inoremap df <esc>
 inoremap fd <esc>
 
 
-" Edit the .vimrc - $MYVIMRC
-
 " line numbers on - but only on current edit buffer
 set number
 au WinEnter *       :setlocal number
 au WinLeave *       :setlocal nonumber
-
-" Escape key Alternative - "The Smash!"
 
 
 "=====[ Status Line ]======================================
@@ -117,28 +112,23 @@ set laststatus=2
 "set statusline+=%l/%L   "cursor line/total lines
 "set statusline+=\ %P    "percent through file
 
-" Perl stuff
+"=====[ Perl ]======================================
+au FileType pl,pm,t set filetype=perl
+" use Perl compiler for all *.pl and *.pm files
+"au BufNewFile perl  
+
 set iskeyword+=:	" colon used by Perl Modules
 set matchpairs=<:>  " allow % to bounce between angle brackets too
 
 " Perl - keyboard stuff
 " note: comma "," - is our leader!
 map <Leader>pt             <ESC>:%! perltidy<CR>
-map ,ptv            <ESC>:<,'>! perltidy<CR>
-map ,t              <ESC>:!prove -vl %<CR>
+map <Leader>ptv            <ESC>:<,'>! perltidy<CR>
+map <Leader>t              <ESC>:!prove -vl %<CR>
 
 let perl_synwrite_qf=1      " reqires Vi::QuickFix module
 "let perl_synwrite_au=1      " quirky! - calls :W automatically on :w calls
 
-" macros - moved to SnipMate - no need to poulte the start up file
-
-
-" Autocommands
-" ------------
-
-au FileType pl,pm,t set filetype=perl
-" use Perl compiler for all *.pl and *.pm files
-"au BufNewFile perl  
 
 :noremap K :!perldoc <cword> <bar><bar> perldoc -f <cword><cr>
 
@@ -154,9 +144,12 @@ au BufReadPost *
     \ endif
 
 
-"=====[ PowerShell sh replacement ]==================================
-set shell=PowerShell 
-set shellcmdflag=-noprofile\ -NoLogo\ -command
+"=====[ Shell ]==================================
+if has ('Win32') || has('Win64')
+    " PowerShell - on Windows
+    set shell=PowerShell 
+    set shellcmdflag=-noprofile\ -NoLogo\ -command
+endif
 
 
 " Timestamp routines ...
@@ -182,7 +175,7 @@ else
     set background=dark
 endif
 
-colorscheme blue
+colorscheme elflord
 
 
 
