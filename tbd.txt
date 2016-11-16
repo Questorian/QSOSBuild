@@ -1,1 +1,3 @@
 * sudo - add users to sudo group
+* alias - add git aliases to profiles (root, and qssysadm, and maybe devops)
+* add standard ssh key to build - to enable quick(er) access to githb
