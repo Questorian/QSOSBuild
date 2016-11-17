@@ -1,0 +1,20 @@
+# application server package list - 2016-11-17T16:13:45
+
+#[http]
+apache2
+apache2-doc
+
+#[sql]
+mysql-server
+mysql-client
+
+#[php]
+php5
+php5-mysql
+libapache2-mod-php5
+php-apc
+
+#[devel]
+phpmyadmin
+
+
