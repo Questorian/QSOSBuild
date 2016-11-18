@@ -88,3 +88,4 @@ Text::CSV
 App::Perldoc::Search
 XML::LibXML
 XMLRPC::Lite
+CPAN::Mini
