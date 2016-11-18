@@ -86,8 +86,8 @@ nnoremap <leader>ll      yypVr=         " underline - double
 "
 inoremap jk <esc>
 inoremap kj <esc>
-#inoremap df <esc>
-#inoremap fd <esc>
+"inoremap df <esc>
+"inoremap fd <esc>
 
 
 " line numbers on - but only on current edit buffer
