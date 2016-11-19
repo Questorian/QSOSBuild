@@ -96,6 +96,14 @@ au WinEnter *       :setlocal number
 au WinLeave *       :setlocal nonumber
 
 
+
+"=====[ General programming support ]===================================
+"
+"" Insert various shebang lines...
+iab hbs #! /bin/sh
+iab hbp #! /usr/bin/env perl<CR><CR>use 5.020;<CR>use warnings;<CR>use warnings;<CR>
+
+
 "=====[ Status Line ]======================================
 "
 " currently using AirLine - force with 'laststatus=2'
