@@ -27,4 +27,5 @@ linux-headers-$(uname -r)
 # devel
 vim-doc
 man
-
+# combine, comm, ...
+moreutils
