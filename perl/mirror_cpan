@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use CPAN::Mini;
+use Time::Piece;
+
+my $t = localtime;
+
+my $folder = '/srv/www/CPAN';
+my $mirror = 'http://mirror.switch.ch/mirror/CPAN';
+# my $mirror = 'ftp://mirror.switch.ch/mirror/CPAN/';
+# my $mirror = 'ftp://mirror.ox.ac.uk/sites/www.cpan.org/';
+
+ print "*** ", $t->datetime, ": starting up CPAN Sync from mirror:
+ $mirror\n";
+
+ CPAN::Mini->update_mirror(
+
+         remote => $mirror,
+                 local => $folder,
+                 log_level => 'debug',
+
+                 );
+
+$t = localtime;
+print $t->datetime, ": sync completed.\n";

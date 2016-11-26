@@ -7,6 +7,9 @@ apache2-doc
 #[sql]
 mysql-server
 mysql-client
+# required for Perl DBD::mysql driver
+libmysqlclient-dev
+
 
 #[php]
 php5
